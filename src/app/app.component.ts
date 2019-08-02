@@ -35,6 +35,10 @@ export class AppComponent {
           value:Math.floor(Math.random()*10),
           color:'rgb(56,118,29)'
         },{
+          name: '就绪',
+          value:Math.floor(Math.random()*10),
+          color:'rgb(157,119,170)'
+        },{
           name: '小休',
           value:Math.floor(Math.random()*20),
           color:'rgb(255,0,0)'

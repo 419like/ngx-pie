@@ -114,7 +114,7 @@ export class PieComponent implements OnChanges,OnInit {
 
   easeOutCubic(pos){
     return (Math.pow((pos-1), 3) +1);
-  },
+  }
 
 
   cal(params){

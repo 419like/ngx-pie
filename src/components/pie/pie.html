@@ -1,6 +1,6 @@
 <!-- <h1 *ngFor="let item of list">{{item.dStr}}</h1> -->
 <!-- <div *ngFor="let item of list">{{item.dStr}}</div> -->
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200px" height="200px" style="border:1px solid red;">
-  <path *ngFor="let item of list" [attr.d]="item.dStr" [attr.fill]="item.color">
+  <path *ngFor="let item of list" [attr.d]="item.dStr" [attr.fill]="item.color" class="item">
   </path>
 </svg>
