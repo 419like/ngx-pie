@@ -24,11 +24,15 @@ export class PieComponent implements OnChanges,OnInit {
   ngOnInit(){
     console.log(this.options);
   }
+
+  animotionStop(resean){
+    console.log(this.step,'stop','resean:',resean);
+    window.cancelAnimationFrame(this.timer);
+  }
   ngOnChanges(changes:any){
     console.log(changes);
     if(changes.options.currentValue&&changes.options.currentValue.listData){
-
-      window.clearInterval(this.timer);
+      this.animotionStop('data change');
 
       this.centerX = changes.options.currentValue.centerX;
       this.centerY = changes.options.currentValue.centerY;
@@ -90,14 +94,15 @@ export class PieComponent implements OnChanges,OnInit {
 
   startAnimotion(){
     this.step = this.totalStep;
-    this.timer = window.setInterval(()=>{
+    this.timer = window.requestAnimationFrame(()=>{
+      console.log(this.step);
        if(this.step <= 0 ){
-          window.clearInterval(this.timer);
+          this.animotionStop('stepEnd');
        }else{
          this.step = this.step - 1;
          this.stepTo(this.step)
        }
-    },1000/this.totalStep);
+    });
   }
 
   stepTo(step){

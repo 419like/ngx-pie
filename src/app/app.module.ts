@@ -3,12 +3,14 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { PieComponent } from '../components/pie/pie'
+import { PieComponent } from '../components/pie/pie';
+import { CanvasPieComponent } from './canvas-pie/canvas-pie.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    PieComponent
+    PieComponent,
+    CanvasPieComponent
   ],
   imports: [
     BrowserModule
